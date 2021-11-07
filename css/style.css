@@ -79,9 +79,9 @@ span {
 }
 
 .chesspiece-dark-checker {
-    background-position-x: 23.2%;
-    background-position-y: 22%;
-    /*dark king*/
+    background-size: 1400%;
+    background-position-x: 100.75%;
+    background-position-y: -2.75%;
 }
 
 .chesspiece-light-king {
@@ -121,9 +121,9 @@ span {
 }
 
 .chesspiece-light-checker {
-    background-position-x: 95.25%;
-    background-position-y: 77%;
-    /*dark king*/
+    background-position-x: 85.25%;
+    background-position-y: 102.5%;
+    background-size: 1400%;
 }
 
 #ChessTable {
