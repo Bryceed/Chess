@@ -4,6 +4,7 @@
     --chessTableDarkerColor: rgb(189, 4, 4);
     --chessTableCellEnchant: rgb(0, 238, 255);
     --chessTableBorderSpacing: 2.5rem;
+    --chessTableColorModifier: 249deg
 }
 
 * {
@@ -32,6 +33,99 @@ span {
     color: var(--chessTableLighterColor);
 }
 
+.chesspiece {
+    background-image: url(../chess-pieces.svg);
+    background-repeat: no-repeat;
+    background-size: 900%;
+    background-position-x: -12%;
+    width: 100%;
+    height: 100%;
+}
+
+.chesspiece-dark-king {
+    background-position-x: 23.2%;
+    background-position-y: 22%;
+    /*dark king*/
+}
+
+.chesspiece-dark-queen {
+    background-position-x: 5.5%;
+    background-position-y: 22%;
+    /*dark king*/
+}
+
+.chesspiece-dark-tower {
+    background-position-x: 41.25%;
+    background-position-y: 23%;
+    /*dark king*/
+}
+
+.chesspiece-dark-bishop {
+    background-position-x: 59.2%;
+    background-position-y: 22.75%;
+    /*dark king*/
+}
+
+.chesspiece-dark-horse {
+    background-position-x: 77.6%;
+    background-position-y: 23.6%;
+    /*dark king*/
+}
+
+.chesspiece-dark-pawn {
+    background-position-x: 95%;
+    background-position-y: 22%;
+    /*dark king*/
+}
+
+.chesspiece-dark-checker {
+    background-position-x: 23.2%;
+    background-position-y: 22%;
+    /*dark king*/
+}
+
+.chesspiece-light-king {
+    background-position-x: 23.2%;
+    background-position-y: 77%;
+    /*dark king*/
+}
+
+.chesspiece-light-queen {
+    background-position-x: 5.5%;
+    background-position-y: 77%;
+    /*dark king*/
+}
+
+.chesspiece-light-tower {
+    background-position-x: 41.25%;
+    background-position-y: 78%;
+    /*dark king*/
+}
+
+.chesspiece-light-bishop {
+    background-position-x: 59.2%;
+    background-position-y: 77.75%;
+    /*dark king*/
+}
+
+.chesspiece-light-horse {
+    background-position-x: 77.6%;
+    background-position-y: 78.6%;
+    /*dark king*/
+}
+
+.chesspiece-light-pawn {
+    background-position-x: 95.25%;
+    background-position-y: 77%;
+    /*dark king*/
+}
+
+.chesspiece-light-checker {
+    background-position-x: 95.25%;
+    background-position-y: 77%;
+    /*dark king*/
+}
+
 #ChessTable {
     background-color: var(--chessTableBorder);
     width: 90vmin;
@@ -39,6 +133,8 @@ span {
     position: relative;
     padding: 2.5vmin;
     box-shadow: 0 0 88px;
+    filter: hue-rotate(var(--chessTableColorModifier));
+    border-radius: 2.5vmin;
 }
 
 #ChessTable .rulesAttr {
@@ -58,6 +154,10 @@ span {
     justify-content: space-around;
     left: 0;
     opacity: .3;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #ChessTable .rulesAttr .ruleHorizontal {
@@ -77,6 +177,94 @@ span {
     width: auto !important;
     height: auto !important;
     font-size: 2.4vmin !important;
+}
+
+#ChessTable .counter {
+    position: absolute;
+    box-shadow: inset 0.5vmin 0.25vmin 0.25vmin rgb(255 255 255 / 30%), inset -0.5vmin -0.25vmin 0.25vmin rgb(0 0 0 / 20%);
+}
+
+#ChessTable .counter#PlayerCounter {
+    width: 1.25vmin;
+    height: calc(50% - 4.5vmin);
+    left: -3vmin;
+    top: 25vmin;
+    border-radius: 50vmin;
+    color: var(--chessTableCellEnchant);
+    transition: .25s ease-out;
+    animation: displayCounterLeft .5s normal forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    z-index: -2;
+}
+
+@keyframes displayCounterLeft {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#ChessTable .counter#PlayerCounter::after {
+    box-shadow: 0 0 1.75vmin currentColor;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.25vmin;
+    left: 0vmin;
+    height: 0;
+    bottom: 0;
+    border-radius: 50vmin;
+    background-color: currentColor;
+    z-index: -1;
+    animation: 24s countdown steps(48);
+    animation-delay: 1.5s;
+}
+
+#ChessTable .counter#PlayerCounter::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.25vmin;
+    left: 0vmin;
+    height: 100%;
+    bottom: 0;
+    height: 100%;
+    border-radius: 50vmin;
+    background-color: currentColor;
+    z-index: -1;
+    background-color: rgba(124, 124, 124, 0.87);
+}
+
+@keyframes countdown {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
+}
+
+#ChessTable .cell#cellA1 {
+    border-top-left-radius: 1.25vmin;
+}
+
+#ChessTable .cell#cellA8 {
+    border-top-right-radius: 1.25vmin;
+}
+
+#ChessTable .cell#cellH1 {
+    border-bottom-left-radius: 1.25vmin;
+}
+
+#ChessTable .cell#cellH8 {
+    border-bottom-right-radius: 1.25vmin;
 }
 
 .cell {
@@ -105,4 +293,13 @@ span {
 
 .dark-cell {
     background-color: var(--chessTableDarkerColor);
+}
+
+input,
+textarea {
+    -webkit-touch-callout: default;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }

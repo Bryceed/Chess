@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>▶▷ Jogando: Damas | CHESS ONLINE</title>
+    <title>▷ Jogando: Damas | CHESS ONLINE</title>
     <link rel="shortcut icon" href="chess.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 
@@ -35,26 +35,64 @@
                 <div>H</div>
             </div>
         </div>
+        <div class="countdownPlayers">
+            <div class="counter counter-yourTurn" id="PlayerCounter"></div>
+            <div class="counter counter-opponentTurn" id="OpponentCounter"></div>
+        </div>
         <div class="cellsArrangement">
-            <div class="cell light-cell" id="cellA1"></div>
-            <div class="cell  dark-cell" id="cellA2"></div>
-            <div class="cell light-cell" id="cellA3"></div>
-            <div class="cell  dark-cell" id="cellA4"></div>
-            <div class="cell light-cell" id="cellA5"></div>
-            <div class="cell  dark-cell" id="cellA6"></div>
-            <div class="cell light-cell" id="cellA7"></div>
-            <div class="cell  dark-cell" id="cellA8"></div>
+            <div class="cell light-cell" id="cellA1">
+                <div class="chesspiece chesspiece-dark-tower"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellA2">
+                <div class="chesspiece chesspiece-dark-horse"></div>
+            </div>
+            <div class="cell light-cell" id="cellA3">
+                <div class="chesspiece chesspiece-dark-bishop"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellA4">
+                <div class="chesspiece chesspiece-dark-king"></div>
+            </div>
+            <div class="cell light-cell" id="cellA5">
+                <div class="chesspiece chesspiece-dark-queen"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellA6">
+                <div class="chesspiece chesspiece-dark-bishop"></div>
+            </div>
+            <div class="cell light-cell" id="cellA7">
+                <div class="chesspiece chesspiece-dark-horse"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellA8">
+                <div class="chesspiece chesspiece-dark-tower"></div>
+            </div>
 
-            <div class="cell  dark-cell" id="cellB1"></div>
-            <div class="cell light-cell" id="cellB2"></div>
-            <div class="cell  dark-cell" id="cellB3"></div>
-            <div class="cell light-cell" id="cellB4"></div>
-            <div class="cell  dark-cell" id="cellB5"></div>
-            <div class="cell light-cell" id="cellB6"></div>
-            <div class="cell  dark-cell" id="cellB7"></div>
-            <div class="cell light-cell" id="cellB8"></div>
+            <div class="cell  dark-cell" id="cellB1">
+                <div class="chesspiece chesspiece-dark-pawn"></div>
+            </div>
+            <div class="cell light-cell" id="cellB2">
+                <div class="chesspiece chesspiece-dark-pawn"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellB3">
+                <div class="chesspiece chesspiece-dark-pawn"></div>
+            </div>
+            <div class="cell light-cell" id="cellB4">
+                <div class="chesspiece chesspiece-dark-pawn"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellB5">
+                <div class="chesspiece chesspiece-dark-pawn"></div>
+            </div>
+            <div class="cell light-cell" id="cellB6">
+                <div class="chesspiece chesspiece-dark-pawn"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellB7">
+                <div class="chesspiece chesspiece-dark-pawn"></div>
+            </div>
+            <div class="cell light-cell" id="cellB8">
+                <div class="chesspiece chesspiece-dark-pawn"></div>
+            </div>
 
-            <div class="cell light-cell" id="cellC1"></div>
+            <div class="cell light-cell" id="cellC1">
+                <div class="chesspiece chesspiece-dark-checker"></div>
+            </div>
             <div class="cell  dark-cell" id="cellC2"></div>
             <div class="cell light-cell" id="cellC3"></div>
             <div class="cell  dark-cell" id="cellC4"></div>
@@ -88,27 +126,60 @@
             <div class="cell  dark-cell" id="cellF5"></div>
             <div class="cell light-cell" id="cellF6"></div>
             <div class="cell  dark-cell" id="cellF7"></div>
-            <div class="cell light-cell" id="cellF8"></div>
+            <div class="cell light-cell" id="cellF8">
+                <div class="chesspiece chesspiece-light-checker"></div>
+            </div>
 
-            <div class="cell light-cell" id="cellG1"></div>
-            <div class="cell  dark-cell" id="cellG2"></div>
-            <div class="cell light-cell" id="cellG3"></div>
-            <div class="cell  dark-cell" id="cellG4"></div>
-            <div class="cell light-cell" id="cellG5"></div>
-            <div class="cell  dark-cell" id="cellG6"></div>
-            <div class="cell light-cell" id="cellG7"></div>
-            <div class="cell  dark-cell" id="cellG8"></div>
+            <div class="cell light-cell" id="cellG1">
+                <div class="chesspiece chesspiece-light-pawn"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellG2">
+                <div class="chesspiece chesspiece-light-pawn"></div>
+            </div>
+            <div class="cell light-cell" id="cellG3">
+                <div class="chesspiece chesspiece-light-pawn"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellG4">
+                <div class="chesspiece chesspiece-light-pawn"></div>
+            </div>
+            <div class="cell light-cell" id="cellG5">
+                <div class="chesspiece chesspiece-light-pawn"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellG6">
+                <div class="chesspiece chesspiece-light-pawn"></div>
+            </div>
+            <div class="cell light-cell" id="cellG7">
+                <div class="chesspiece chesspiece-light-pawn"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellG8">
+                <div class="chesspiece chesspiece-light-pawn"></div>
+            </div>
 
-            <div class="cell  dark-cell" id="cellH1"></div>
-            <div class="cell light-cell" id="cellH2"></div>
-            <div class="cell  dark-cell" id="cellH3"></div>
-            <div class="cell light-cell" id="cellH4"></div>
-            <div class="cell  dark-cell" id="cellH5"></div>
-            <div class="cell light-cell" id="cellH6"></div>
-            <div class="cell  dark-cell" id="cellH7"></div>
-            <div class="cell light-cell" id="cellH8"></div>
+            <div class="cell  dark-cell" id="cellH1">
+                <div class="chesspiece chesspiece-light-tower"></div>
+            </div>
+            <div class="cell light-cell" id="cellH2">
+                <div class="chesspiece chesspiece-light-horse"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellH3">
+                <div class="chesspiece chesspiece-light-bishop"></div>
+            </div>
+            <div class="cell light-cell" id="cellH4">
+                <div class="chesspiece chesspiece-light-king"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellH5">
+                <div class="chesspiece chesspiece-light-queen"></div>
+            </div>
+            <div class="cell light-cell" id="cellH6">
+                <div class="chesspiece chesspiece-light-bishop"></div>
+            </div>
+            <div class="cell  dark-cell" id="cellH7">
+                <div class="chesspiece chesspiece-light-horse"></div>
+            </div>
+            <div class="cell light-cell" id="cellH8">
+                <div class="chesspiece chesspiece-light-tower"></div>
+            </div>
         </div>
-
     </div>
 </body>
 
