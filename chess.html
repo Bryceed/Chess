@@ -8,10 +8,13 @@
     <title>▷ Jogando: Damas | CHESS ONLINE</title>
     <link rel="shortcut icon" href="chess.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="js/system.js"></script>
+    <script src="js/chess.js"></script>
+    <script src="js/particles.js"></script>
 </head>
 
 <body>
+    <div id="particles-bg"></div>
     <div id="ChessTable">
         <div class="rulesAttr">
             <div class="rule ruleHorizontal">
@@ -209,6 +212,15 @@
             </div>
         </div>
     </div>
+
 </body>
+
+
+<script>
+    /* PARTICLE SYSTEM */
+    particlesJS.load('particles-bg', 'js/particlesjs-config.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
 
 </html>

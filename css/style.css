@@ -268,8 +268,8 @@ span {
 }
 
 .cell {
-    width: calc(85vmin / 8);
-    height: calc(85vmin / 8);
+    width: 10.625vmin;
+    height: 10.625vmin;
     display: inline-block;
     position: relative;
     transition: cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
@@ -287,12 +287,42 @@ span {
     border-radius: calc((85vmin / 8) / 16);
 }
 
+.cell:hover .chesspiece,
+.cell:active .chesspiece,
+.cell-active .chesspiece {
+    animation: pieceshadow .1s linear normal forwards;
+    position: relative;
+}
+
+@keyframes pieceshadow {
+    0% {
+        filter: drop-shadow(0 0 #000) drop-shadow(0 0 #000) drop-shadow(0 0 #000);
+        top: 0;
+        left: 0
+    }
+    100% {
+        filter: drop-shadow(.39vmin .39vmin #222) drop-shadow(.26vmin .26vmin #444) drop-shadow(.13vmin .13vmin #666);
+        top: -.39vmin;
+        left: -.39vmin
+    }
+}
+
 .light-cell {
     background-color: var(--chessTableLighterColor);
 }
 
 .dark-cell {
     background-color: var(--chessTableDarkerColor);
+}
+
+#particles-bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 input,
