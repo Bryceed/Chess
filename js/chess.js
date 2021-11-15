@@ -7,6 +7,7 @@ let nowTurn = 0;
 let chessTableSize = [8, 8];
 
 const GAMEMODE = URLGet("mode")
+const TILE_IDENTIFIER_PREFIX = "cell";
 const CHESS_PIECES = {
     "LIGHT": [{
         "KING": "♕",
@@ -32,7 +33,11 @@ const CHESS_PIECES = {
 document.addEventListener('DOMContentLoaded', DocLoaded);
 document.addEventListener("click", DocClick);
 
-function Loaded() {
+function DocLoaded() {
+
+}
+
+function DocClick(event) {
 
 }
 
